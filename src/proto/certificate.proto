@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package certificate;
+
+service CertificateService {
+  rpc LetsEncrypt (LetsEncryptInput) returns (LetsEncryptResponse);
+}
+
+message LetsEncryptInput {
+  string email = 1;
+}
+
+message LetsEncryptResponse {
+  string data = 1;
+}
